@@ -24,6 +24,12 @@ export default defineConfig({
     }),
   ],
   vite: {
+    optimizeDeps: {
+      include: ["@excalidraw/excalidraw"],
+    },
+    ssr: {
+      external: ["@excalidraw/excalidraw"],
+    },
     define: {
       "process.env.IS_PREACT": JSON.stringify("false"),
     },
